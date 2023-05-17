@@ -8,6 +8,70 @@ body {
     background-repeat: no-repeat;
 }
 
+
+  .sign{
+   text-align: center;
+  margin-bottom: 10%;
+  margin-top: 10%;
+  border: #333;
+    border-radius: 100px;
+    cursor: pointer;
+        
+  }
+  .container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 100px;
+    
+  }
+
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+  h3 {
+    text-align: center;
+    color: #333333;
+
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 388px;
+    justify-content: center;
+  }
+
+  input[type="submit"] {
+    width: 30%;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    border: #333;
+    border-radius: 100px;
+    cursor: pointer;
+  }
+  select[name="format"]
+  {
+width: 35%;
+background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    border: #333;
+    border-radius: 100px;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
 .sign {
     text-align: center;
     margin: 0% auto;

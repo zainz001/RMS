@@ -1,6 +1,34 @@
 <?php
 session_start();
 include('dbconnect.php');
+if (isset($_POST['login'])) {
+    if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['user_type'])){
+    {
+            $email = $_POST['email'];
+        
+    $query = "SELECT  * FROM `users` WHERE email='$email'";
+    $query_run = $conn->prepare($query);
+    $query_run->execute();    
+    $result = $query_run->fetch(PDO::FETCH_ASSOC);
+
+    if($result['user_type']=='admin')
+    { 
+        echo header("location: admin.php");
+        
+    }
+    
+    else if($result['user_type']=='customer')
+
+    {
+        echo header("location: passenger.php");
+        }
+    else
+    {
+        echo "incorrect";
+    }
+}
+    }
+}
 
 if (isset($_POST['signup'])) {
     if ($_POST['password'] == $_POST['cpassword']) {
@@ -16,7 +44,6 @@ if (isset($_POST['signup'])) {
 
 
             $query = "INSERT INTO users(name ,email, password,  contact, city,user_type) VALUES (:name,:email,:password, :contact,:city,:user_type)";
-
 
 
             $query_run = $conn->prepare($query);
