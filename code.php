@@ -2,25 +2,33 @@
 session_start();
 include('dbconnect.php');
 if (isset($_POST['login'])) {
-    if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['user_type'])){
-    {
+
+    if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['user_type']) ){
+    
             $email = $_POST['email'];
-        
-    $query = "SELECT  * FROM `users` WHERE email='$email'";
+            $password = $_POST['password'];
+            $user_type = $_POST['user_type'];
+            
+       
+    $query = "SELECT  * FROM `users` WHERE email='$email' AND password='$password' AND user_type='$user_type'";
     $query_run = $conn->prepare($query);
     $query_run->execute();    
     $result = $query_run->fetch(PDO::FETCH_ASSOC);
 
     if($result['user_type']=='admin')
-    { 
-        echo header("location: admin.php");
+    {$_SESSION['Message']= "successfully login";
+        header('location:admin.php');
+        exit(0); 
+         
         
     }
     
     else if($result['user_type']=='customer')
 
     {
-        echo header("location: passenger.php");
+        $_SESSION['Message']= "successfully login";
+        header('location:passenger.php');
+        exit(0); 
         }
     else
     {
@@ -28,7 +36,7 @@ if (isset($_POST['login'])) {
     }
 }
     }
-}
+
 
 if (isset($_POST['signup'])) {
     if ($_POST['password'] == $_POST['cpassword']) {
