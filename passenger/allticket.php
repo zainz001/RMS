@@ -78,49 +78,53 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="Package Details" id="exampleModalLabel">Modal title</h5>
+                    <h5 class="Package Details" id="exampleModalLabel">Package Details</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <label for="train_name">train name</label>
-                    <br>
-                    <input type="text" id="train_name">
-                    <br>
 
-                    <label for="date_available">date available</label>
-                    <br>
-                    <input type="text" id="date_available">
-                    <br>
-                    <label for="departure_time">Departure time</label>
-                    <br>
-                    <input type="text" id="departure_time">
-                    <br>
-                    <label for="arrival_time">Arrival time</label>
-                    <br>
-                    <input type="text" id="arrival_time">
-                    <br>
-                    <label for="departure_location">Departure time</label>
-                    <br>
-                    <input type="text" id="departure_location">
-                    <br>
-                    <label for="destination">destination</label>
-                    <br>
-                    <input type="text" id="destination">
-                    <br>
-                    <label for="name">Name</label>
-                    <br>
-                    <input type="text" id="name">
-                    <br>
-                    <label for="no_of_passenger">No of passenger</label>
-                    <br>
-                    <input type="text" id="no_of _passenger">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Book Tickets</button>
-                </div>
+                <form action="addBooking.php" method="post">
+                    <div class="modal-body">
+                        <input type="number" name="id" id="id" hidden>
+                        <label for="train_name"  >train name</label>
+                        <br>
+                        <input type="text" id="train_name" name="train_name" readonly>
+                        <br>
+
+                        <label for="date_available">date available</label>
+                        <br>
+                        <input type="text" id="date_available" name="booking_date" readonly />
+                        <br>
+                        <label for="departure_time">Departure time</label>
+                        <br>
+                        <input type="text" id="departure_time" name="departure_time" readonly>
+                        <br>
+                        <label for="arrival_time">Arrival time</label>
+                        <br>
+                        <input type="text" id="arrival_time" name="arrival_time" readonly>
+                        <br>
+                        <label for="departure_location">Departure time</label>
+                        <br>
+                        <input type="text" id="departure_location" name="departure_location" readonly>
+                        <br>
+                        <label for="destination">destination</label>
+                        <br>
+                        <input type="text" id="destination" name="destination" readonly>
+                        <br>
+                        <label for="name">Name</label>
+                        <br>
+                        <input type="text" name="name" id="name">
+                        <br>
+                        <label for="no_of_passenger">No of passenger</label>
+                        <br>
+                        <input type="text" name="no_of_passenger" id="no_of _passenger">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" name="bookticket" value="bookticket ">Book Tickets</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -136,7 +140,14 @@
                 dataType: "json",
                 success: function (data) {
                     if (data) {
+                        $('#id').val(data.ticket_id);
                         $('#train_name').val(data.train_name);
+                        $('#date_available').val(data.date_available);
+                        $('#departure_time').val(data.departure_time);
+                        $('#arrival_time').val(data.arrival_time);
+                        $('#departure_location').val(data.departure_location);
+                        $('#destination').val(data.destination);
+
                     }
                 }
             });
