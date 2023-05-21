@@ -86,7 +86,7 @@
 
                 <form action="addBooking.php" method="post">
                     <div class="modal-body">
-                        <input type="number" name="id" id="id" hidden>
+                        <input type="number" name="ticketid" id="ticketid" hidden>
                         <label for="train_name"  >train name</label>
                         <br>
                         <input type="text" id="train_name" name="train_name" readonly>
@@ -116,9 +116,9 @@
                         <br>
                         <input type="text" name="name" id="name">
                         <br>
-                        <label for="no_of_passenger">No of passenger</label>
+                        <label for="no_of_pessenger">No of pessenger</label>
                         <br>
-                        <input type="text" name="no_of_passenger" id="no_of _passenger">
+                        <input type="text" name="no_of_pessenger" id="no_of_pessenger">
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -140,7 +140,7 @@
                 dataType: "json",
                 success: function (data) {
                     if (data) {
-                        $('#id').val(data.ticket_id);
+                        $('#ticketid').val(data.ticket_id);
                         $('#train_name').val(data.train_name);
                         $('#date_available').val(data.date_available);
                         $('#departure_time').val(data.departure_time);
