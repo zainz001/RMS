@@ -1,4 +1,9 @@
+<?php
 
+include('../check_if_authorized.php');
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,11 +16,10 @@
 <body>
 <nav>
   <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="allBookings.php">Trains</a></li>
-    <li><a href="allpackages.php">Schedules</a></li>
-    <li><a href="addTickets.php">Tickets</a></li>
-    <li><a href="#">Contact</a></li>
+    <li><a href="admin.php">Home</a></li>
+    <li><a href="allBookings.php">Tickets Booked</a></li>
+    <li><a href="allpackages.php">All Added Packages </a></li>
+    <li><a href="addTickets.php">Add Tickets</a></li>
   </ul>
 </nav>
 
