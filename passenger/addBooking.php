@@ -12,7 +12,8 @@ if (isset($_POST['bookticket'])) {
         $arrival_location = $_POST['destination'];
         $train_name = $_POST['train_name'];
         $booking_date = $_POST['booking_date'];
-        $query = "INSERT INTO booking_customer( name, no_of_pessenger, departure_location, arrival_location, train_name, booking_date, ticketid) VALUES (':name',':no_of_pessenger',':departure_location',':arrival_location',':train_name',':booking_date',':ticketid')";
+        $query ="INSERT INTO booking_customer( name, no_of_pessenger, departure_location, arrival_location, train_name, booking_date, ticketid) VALUES (:name,:no_of_pessenger,:departure_location,:arrival_location,:train_name,:booking_date,:ticketid)";
+        //$query = "INSERT INTO booking_customer( name, no_of_pessenger, departure_location, arrival_location, train_name, booking_date, ticketid) VALUES (':name',':no_of_pessenger',':departure_location',':arrival_location',':train_name',':booking_date',':ticketid')";
         $query_run = $conn->prepare($query);
         $data = [
 
@@ -27,9 +28,14 @@ if (isset($_POST['bookticket'])) {
 
         ];
         $query_run->execute($data);
-        echo "inserted successfully";
+        if ($data) {
+            header('location:./admin/allBooking,php');
+            
+            
+        }
+        header('location:../admin/allBookings.php');
     } else {
-        echo "not insert";
+        echo 'not insert';
     }
 
 

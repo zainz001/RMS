@@ -118,7 +118,7 @@
                         <br>
                         <label for="no_of_pessenger">No of pessenger</label>
                         <br>
-                        <input type="text" name="no_of_pessenger" id="no_of_pessenger">
+                        <input type="number" name="no_of_pessenger">
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-secondary" data-dismiss="modal">Close</button>
