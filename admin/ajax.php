@@ -22,6 +22,18 @@ if (isset($_POST['ticketid'])) { // Change to check for POST request
 
 }
 
+if (isset($_POST['delticketid'])) {
+    $ticketid = $_POST['delticketid'];
+    $query = "DELETE FROM train_ticket WHERE ticket_id = :delticketid";
+
+    $statement = $conn->prepare($query);
+    $statement->bindParam(':delticketid', $ticketid);
+    $result = $statement->execute();
+
+    if ($result) {
+        echo json_encode("DELETED");
+    }
+}
 
 
 

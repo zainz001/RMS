@@ -11,9 +11,11 @@ if (isset($_POST['login'])) {
         $query_run->execute();
         $result = $query_run->fetch(PDO::FETCH_ASSOC);
         if ($result) {
-            $id = $result['id'];
+            $id = $result['user_id'];
             $name = $result['name'];
             $email = $result['email'];
+            $city = $result['city'];
+            $contact = $result['contact'];
             $type = $result['user_type'];
             $_SESSION['id'] = $id;
             $_SESSION['username'] = $name;
@@ -21,15 +23,15 @@ if (isset($_POST['login'])) {
             $_SESSION['usertype'] = $user_type;
             if ($_SESSION['usertype'] == 'admin') {
                 $_SESSION['Message'] = "successfully login";
-                header('location:admin.php');
+                header('location:admin/admin.php');
                 exit(0);
             } else if ($_SESSION['usertype'] == 'customer') {
                 $_SESSION['Message'] = "successfully login";
-                header('location:passenger.php');
+                header('location:passenger/passenger.php');
                 exit(0);
-            } else {
-                echo "incorrect";
             }
+        } else {
+            echo "incorrect";
         }
     }
 }
