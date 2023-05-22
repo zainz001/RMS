@@ -1,5 +1,8 @@
 <?php include('../dbconnect.php') ?>
-<?php include('../head.php') ?>
+<?php include('../head.php');
+session_start();
+
+?>
 
 <div class="container">
     <div class="table">
@@ -51,7 +54,7 @@
                             </td>
                             <td> <!-- Button trigger modal -->
                                 <button type="button" value="<?= $row['ticket_id']; ?>" name="ticketid"
-                                    class="btn btn-primary ticketid" data-toggle="modal" data-target="#exampleModal">
+                                    class="btn btn-success ticketid" data-toggle="modal" data-target="#exampleModal">
                                     Book This Package
                                 </button>
                             </td>
@@ -71,6 +74,7 @@
             </tbody>
         </table>
     </div>
+    <a type="button" href="../logout.php">logout</a>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -87,7 +91,7 @@
                 <form action="addBooking.php" method="post">
                     <div class="modal-body">
                         <input type="number" name="ticketid" id="ticketid" hidden>
-                        <label for="train_name"  >train name</label>
+                        <label for="train_name">train name</label>
                         <br>
                         <input type="text" id="train_name" name="train_name" readonly>
                         <br>
@@ -122,7 +126,8 @@
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" name="bookticket" value="bookticket ">Book Tickets</button>
+                        <button type="submit" class="btn btn-success" name="bookticket" value="bookticket ">Book
+                            Tickets</button>
                     </div>
                 </form>
             </div>
