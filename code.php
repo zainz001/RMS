@@ -31,7 +31,7 @@ if (isset($_POST['login'])) {
                 exit(0);
             }
         } else {
-            echo "incorrect";
+                echo "incorrect";
         }
     }
 }
