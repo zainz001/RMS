@@ -31,7 +31,7 @@ if (isset($_POST['login'])) {
                 exit(0);
             }
         } else {
-                echo "incorrect";
+            echo "incorrect";
         }
     }
 }
@@ -57,6 +57,7 @@ if (isset($_POST['signup'])) {
                 ':user_type' => $user_type,
             ];
             $query_run->execute($data);
+            echo header('location:login.php');
         }
     } else if ($_POST['password'] != $_POST['cpassword']) {
         echo '<script>  alert("Match both the passwords");  </script>';
