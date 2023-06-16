@@ -1,3 +1,6 @@
+<?php
+include('../head.php')
+?>
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" href="style.css">
@@ -8,7 +11,8 @@
 <body>
 <div class="container"> 
 <h2>Ticket Form</h2>
-    <form action="addTicketAction.php" method="post">
+   
+<form action="addTicketAction.php" method="post">
        
     <select name="train_name" id="train_name">
             <option>Select Train</option>
@@ -584,6 +588,7 @@
         <br>
         <button type="submit" name="add_ticket">Add Ticket</button>
     </form>
-    </div>   
+    </div>  
+    </div> 
 </body>
 </html>

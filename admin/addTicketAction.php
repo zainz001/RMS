@@ -57,5 +57,6 @@ if (isset($_POST['add_ticket'])) {
 </head>
 <body>
     <p>add more tickets <button type="submit"> <a href="addTickets.php"> add</a></button> </p>
+    <p><a href="admin.php">Home</a></p>
 </body>
 </html>

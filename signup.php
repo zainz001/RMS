@@ -10,14 +10,15 @@
   
 </head>
 <body>
+
     <div class="container">
         <h3>signup</h3>
     <form action="code.php" method="post">
         <input type="text" name="name" placeholder="Username" required>
         <input type="text" name="email" placeholder="email" required>
         
-        <input type="text" name="password" placeholder="Password" required>
-        <input type="text" name="cpassword" placeholder="confirmPassword" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="password" name="cpassword" placeholder="confirmPassword" required>
         <input type="text" name="contact" placeholder="contact" required>
         <select name="city" id="Location">
             <option value="" disabled selected>Select City</option>

@@ -6,11 +6,14 @@ include('dbconnect.php') ?>
 <head>
   <title>Railway Management System - Login</title>
   <link rel="stylesheet" href="style.css">
+  
 </head>
 
-<body>
+
+<body class="p1">
   <div class="container">
-    <h2>Railway Management System</h2>
+  
+  <h2>Railway Management System</h2>
     <h3>login</h3>
     <form action="code.php" method="post">
       <input type="text" name="email" placeholder="Email" required>
@@ -30,6 +33,8 @@ include('dbconnect.php') ?>
 
     </form>
   </div>
+
 </body>
+
 
 </html>

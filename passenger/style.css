@@ -30,7 +30,11 @@ body {
     border: #333;
     border-radius: 100px;
     margin-top: 5%;  }
+    .p1 
 
+    {
+      background-image: url('assets/new.jpg');
+    }
 
 input[type="submit"] {
     width: 100%;

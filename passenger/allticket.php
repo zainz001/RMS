@@ -73,8 +73,9 @@ session_start();
                 ?>
             </tbody>
         </table>
+        <a type="button" href="../logout.php">logout</a>
     </div>
-    <a type="button" href="../logout.php">logout</a>
+    
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"

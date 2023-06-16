@@ -1,6 +1,5 @@
 <?php
-
-include('../check_if_authorized.php');
+include('../head.php');
 
 
 ?>
@@ -20,6 +19,8 @@ include('../check_if_authorized.php');
     <li><a href="allBookings.php">Tickets Booked</a></li>
     <li><a href="allpackages.php">All Added Packages </a></li>
     <li><a href="addTickets.php">Add Tickets</a></li>
+    <li><a type="button" href="../logout.php">logout</a></li>
+   
   </ul>
 </nav>
 

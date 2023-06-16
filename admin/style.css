@@ -8,7 +8,14 @@ body {
     background-repeat: no-repeat;
 }
 
+.topnav-right{
+  float: right;
+}
+.p1 
 
+{
+  background-image: url('assets/new.jpg');
+}
   .sign{
    text-align: center;
   margin-bottom: 10%;
